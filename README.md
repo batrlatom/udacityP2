@@ -129,36 +129,44 @@ The model was able to correctly guess 4 of the 5 traffic signs, which gives an a
 
 The top five soft max probabilities are :
 
----------------------------------------- Image number: 1-------------------------------
+Image number: 1
 100.000 %
 0.000 %
 0.000 %
 0.000 %
 0.000 %
----------------------------------------- Image number: 2-------------------------------
+---------------------------------------- 
+Image number: 2
 99.397 %
 0.587 %
 0.012 %
 0.003 %
 0.001 %
----------------------------------------- Image number: 3-------------------------------
+---------------------------------------- 
+Image number: 3
 99.607 %
 0.390 %
 0.003 %
 0.000 %
 0.000 %
----------------------------------------- Image number: 4-------------------------------
+----------------------------------------
+Image number: 4
 100.000 %
 0.000 %
 0.000 %
 0.000 %
 0.000 %
----------------------------------------- Image number: 5-------------------------------
+---------------------------------------- 
+Image number: 5
 100.000 %
 0.000 %
 0.000 %
 0.000 %
 0.000 %
+---------------------------------------- 
+
+
+It is shown that models is very certain of its results. Unfortunatelly, model is certain that Pedestrians sign is General caution. 
 
 # 6. Discussion of possible improvements
 We had a problem to differentiate between Pedestrians and General caution traffic sign. One of the problems could be that the are not enough data for Pedestrians images. Possible improvement could be to use generative adversial network to generate order of magnite more images. In this case, cnn could have enough data to generalize better.
