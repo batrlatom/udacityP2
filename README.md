@@ -67,18 +67,18 @@ Example of "equalized" picture
 
 # 3. Neural Network Architecture
 
-I used standard LeNet architecture and received decent score over 80% accuracy. But network started to show overfitting and also training was rather slow. In second iteration, I changed RELU to ELU, hopping to perform [better](https://www.picalike.com/blog/2015/11/28/relu-was-yesterday-tomorrow-comes-elu/) . I also added dropout layers after first and second convolution, just before elu activation. As the last thing, I dropped learning rate and let it on the Adam optimizer itself. I also increased batch from 64 to 256. Main improvement was not in the architecture itself, but because I used new GTX1080ti and was able to run more iterations quickly. After those improvements, I was satisfied with the results.
+I used standard LeNet architecture and received decent score over 80% accuracy. But network started to show overfitting and also training was rather slow. In second iteration, I changed RELU to ELU, hopping to perform [better](https://www.picalike.com/blog/2015/11/28/relu-was-yesterday-tomorrow-comes-elu/) . I also added dropout layers after first and second convolution, just before elu activation. As the last thing, I dropped learning rate and let it on the Adam optimizer itself. 
 
 My upgraded LeNet model consisted of the following layers:
 
 | Layer         		|     Description	        					| 
 |:---------------------:|:---------------------------------------------:| 
 | Input         		| 32x32x1 RGB image   							| 
-| Convolution 3x3     	| 1x1 stride, same padding, outputs 28x28x6  	|
+| Convolution 5x5     	| 1x1 stride, same padding, outputs 28x28x6  	|
 | Dropout           	| 50% dropout chance                        	|
 | ELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 14x14x6  				|
-| Convolution 3x3     	| 1x1 stride, valid padding, outputs 32x32x64 	|
+| Convolution 5x5     	| 1x1 stride, valid padding, outputs 32x32x64 	|
 | Dropout           	| 50% dropout chance                        	|
 | ELU					|												|
 | Max pooling	      	| 2x2 stride,  outputs 16x16x64 				|
@@ -95,7 +95,11 @@ Graph visualisation from Tensorboard:
 
 
 
-# 4. Validation Results
+# 4. Training phase
+I used Adam optimizer with learning rate of 1e-5 when I used my old macbook pc, but ended with default settings ( learning rate 1e-3 ). In my first training phase, I used batch size of 64. But when I received new GTX1080ti, I tried to change some parameters. So I increased batch size to 256 and let learning rate ad 1e-3. It helped me achieved needed accuracy in under 25 epochs. After those improvements, I was satisfied with the results. I also saved trained model only when validation accuracy improved. 
+
+
+# 5. Validation Results
 
 My final model results were:
 * training set accuracy of 97.0+ %
@@ -103,7 +107,7 @@ My final model results were:
 * test set accuracy of 86.7%
 
 
-# 5. "Real world" results
+# 6. "Real world" results
 
 Here are five German traffic signs that I found on the web:
 ![Road work](new_images/g1.jpg)
@@ -166,5 +170,5 @@ Image Pedestrians:
 
 It is shown that models is very certain of its results. Unfortunatelly, model is certain that Pedestrians sign is General caution. 
 
-# 6. Discussion of possible improvements
+# 7. Discussion of possible improvements
 We had a problem to differentiate between Pedestrians and General caution traffic sign. One of the problems could be that the are not enough data for Pedestrians images. Possible improvement could be to use generative adversial network to generate order of magnite more images. In this case, cnn could have enough data to generalize better.
