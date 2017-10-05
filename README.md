@@ -140,80 +140,82 @@ The model was able to correctly guess 9 of the 12 traffic signs, which gives an 
 
 The top five soft max probabilities are :
 
-------------------- Speed limit (60km/h) ------------
-100.000 %
-0.000 %
-0.000 %
-0.000 %
-0.000 %
-------------------- Yield ---------------------------
-100.000 %
-0.000 %
-0.000 %
-0.000 %
-0.000 %
-------------------- Keep right ----------------------
-85.343 %
-6.050 %
-5.667 %
-1.717 %
-0.996 %
-------------------- Children crossing ---------------
-99.558 %
-0.442 %
-0.000 %
-0.000 %
-0.000 %
--------------------- General caution ----------------
-99.510 %
-0.193 %
-0.173 %
-0.046 %
-0.031 %
--------------------- Speed limit (120km/h) ----------
-58.283 %
-20.547 %
-19.286 %
-1.469 %
-0.394 %
--------------------- Stop ---------------------------
-100.000 %
-0.000 %
-0.000 %
-0.000 %
-0.000 %
--------------------- Priority road ------------------
-100.000 %
-0.000 %
-0.000 %
-0.000 %
-0.000 %
--------------------- Yield ---------------------------
-100.000 %
-0.000 %
-0.000 %
-0.000 %
-0.000 %
--------------------- Speed limit (30km/h) ------------
-100.000 %
-0.000 %
-0.000 %
-0.000 %
-0.000 %
--------------------- Go straight or left -------------
-100.000 %
-0.000 %
-0.000 %
-0.000 %
-0.000 %
--------------------- General caution -----------------
-88.069 %
-10.930 %
-0.858 %
-0.124 %
-0.008 %
+------------------- Speed limit (60km/h) ------------<br />
+100.000 %<br />
+0.000 %<br />
+0.000 %<br />
+0.000 %<br />
+0.000 %<br />
+------------------- Yield ---------------------------<br />
+100.000 %<br />
+0.000 %<br />
+0.000 %<br />
+0.000 %<br />
+0.000 %<br />
+------------------- Keep right ----------------------<br />
+85.343 %<br />
+6.050 %<br />
+5.667 %<br />
+1.717 %<br />
+0.996 %<br />
+------------------- Children crossing ---------------<br />
+99.558 %<br />
+0.442 %<br />
+0.000 %<br />
+0.000 %<br />
+0.000 %<br />
+-------------------- General caution ----------------<br />
+99.510 %<br />
+0.193 %<br />
+0.173 %<br />
+0.046 %<br />
+0.031 %<br />
+-------------------- Speed limit (120km/h) ----------<br />
+58.283 %<br />
+20.547 %<br />
+19.286 %<br />
+1.469 %<br />
+0.394 %<br />
+-------------------- Stop ---------------------------<br />
+100.000 %<br />
+0.000 %<br />
+0.000 %<br />
+0.000 %<br />
+0.000 %<br />
+-------------------- Priority road ------------------<br />
+100.000 %<br />
+0.000 %<br />
+0.000 %<br />
+0.000 %<br />
+0.000 %<br />
+-------------------- Yield ---------------------------<br />
+100.000 %<br />
+0.000 %<br />
+0.000 %<br />
+0.000 %<br />
+0.000 %<br />
+-------------------- Speed limit (30km/h) ------------<br />
+100.000 %<br />
+0.000 %<br />
+0.000 %<br />
+0.000 %<br />
+0.000 %<br />
+-------------------- Go straight or left -------------<br />
+100.000 %<br />
+0.000 %<br />
+0.000 %<br />
+0.000 %<br />
+0.000 %<br />
+-------------------- General caution -----------------<br />
+88.069 %<br />
+10.930 %<br />
+0.858 %<br />
+0.124 %<br />
+0.008 %<br />
+<br />
 
-It is shown that models is very certain of its results in correct cases. Unfortunatelly, model is certain even with uncorrect prediction ( except speed limit 30 km/h, there is 58% reliability ). As expected, model interchanged correct in cases when picture was deformed or in not so favorable lightning conditions. Uncorect predictions are somewhat similar in shape of the sign or the image in the sign. 
+
+It is shown that models is very certain of its results in correct cases. Unfortunatelly, model is certain even with uncorrect prediction ( except speed limit 30 km/h, there is 58% reliability ). As expected, model interchanged correct in cases when picture was deformed or in not so favorable lightning conditions. Uncorect predictions are somewhat similar in shape of the sign or the image in the sign. For example general caution and children crossing have very similar shapes. Same is true for speed limit 30 km/h and 120 km/h. 
 
 # 7. Discussion of possible improvements
 We had a problem to differentiate between Pedestrians and General caution traffic sign. One of the problems could be that the are not enough data for Pedestrians images. Possible improvement could be to use generative adversial network to generate order of magnite more images. In this case, cnn could have enough data to generalize better.
