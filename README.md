@@ -20,11 +20,11 @@ To complete the project, we need to meet following goals:
 [image3]: ./examples/07142.ppm "pic3"
 [image4]: ./examples/09028.ppm "pic4"
 [image5]: ./examples/11721.ppm "pic5"
-[image6]: ./new_images/g1.jpg "pic6"
-[image7]: ./new_images/g2.jpg "pic7"
-[image8]: ./new_images/g3.jpg "pic8"
-[image9]: ./new_images/g4.jpg "pic9"
-[image10]: ./new_images/g5.jpg "pic10"
+[image6]: ./new_images/g3.png "pic6"
+[image7]: ./new_images/g4.png "pic7"
+[image8]: ./new_images/g5.png "pic8"
+[image9]: ./new_images/g7.png "pic9"
+[image10]: ./new_images/g8.png "pic10"
 [image11]: ./graph.png "graph"
 [image12]: ./histogram.png "histogram"
 [image13]: ./equalized.png "equalized"
@@ -108,67 +108,112 @@ My final model results were:
 
 
 # 6. "Real world" results
+Instead of just five, I downloaded twelve images from Google's Street view. Some images are same, but photographed from different angle or in different light settings.
+All images have been captured from area around Berlin. 
 
-Here are five German traffic signs that I found on the web:
-![Road work](new_images/g1.jpg)
-![Pedestrians](new_images/g2.jpg)
-![General caution](new_images/g3.jpg)
-![Stop](new_images/g4.jpg)
-![Speed limit (60km/h)](new_images/g5.jpg)
+Here are few German traffic signs that I got:
+![Road work][image6]
+![Pedestrians][image7]
+![General caution][image8]
+![Stop][image9]
+![Speed limit (60km/h)][image10]
 
 So I preprocessed new images and run inference. I received fine results with the accuracy of 80%.
 
-| Image			        |     Prediction	        					| 
-|:---------------------:|:---------------------------------------------:| 
-| Road Work      		| Road Work   									| 
-| Pedestrians     		| General caution								|
-| General caution		| General caution								|
-| Stop		      		| Stop							 				|
-| Speed limit (60km/h)	| Speed limit (60km/h)							|
+| Image			      				|     Prediction	        		| 
+|:---------------------------------:|:---------------------------------:| 
+| Speed limit (60km/h)      		| Speed limit (60km/h)   			| 
+| Yield     						| Yield								|
+| Speed limit (30km/h)				| Keep right						|
+| Children crossing		      		| Children crossing					|
+| Children crossing					| General caution					|
+| Speed limit (30km/h) 	 			| Speed limit (120km/h)				|
+| Stop 								| Stop 								|
+| Priority road 					| Priority road 					|
+| Yield 							| Yield								|
+| Speed limit (30km/h) 				| Speed limit (30km/h) 				|
+| Go straight or left 				| Go straight or left 				|
+| General caution 					| General caution 					|
 
 
-The model was able to correctly guess 4 of the 5 traffic signs, which gives an accuracy of 80%. This compares fine, since we tried just few images, so each error have significant value.
-
-
+The model was able to correctly guess 9 of the 12 traffic signs, which gives an accuracy of 75%. 
 
 The top five soft max probabilities are :
 
-Image Road Work:
+---------------------------------------- Speed limit (60km/h) -------------------------------
 100.000 %
 0.000 %
 0.000 %
 0.000 %
 0.000 %
-
-Image Stop:
-99.397 %
-0.587 %
-0.012 %
-0.003 %
-0.001 %
-
-Image General caution:
-99.607 %
-0.390 %
-0.003 %
-0.000 %
-0.000 %
-
-Image Speed limit (60km/h):
+---------------------------------------- Yield -------------------------------
 100.000 %
 0.000 %
 0.000 %
 0.000 %
 0.000 %
-
-Image Pedestrians:
+----------------------------------------  Keep right -------------------------------
+85.343 %
+6.050 %
+5.667 %
+1.717 %
+0.996 %
+---------------------------------------- Children crossing -------------------------------
+99.558 %
+0.442 %
+0.000 %
+0.000 %
+0.000 %
+---------------------------------------- General caution -------------------------------
+99.510 %
+0.193 %
+0.173 %
+0.046 %
+0.031 %
+---------------------------------------- Speed limit (120km/h) -------------------------------
+58.283 %
+20.547 %
+19.286 %
+1.469 %
+0.394 %
+---------------------------------------- Stop -------------------------------
 100.000 %
 0.000 %
 0.000 %
 0.000 %
 0.000 %
+---------------------------------------- Priority road -------------------------------
+100.000 %
+0.000 %
+0.000 %
+0.000 %
+0.000 %
+----------------------------------------  Yield -------------------------------
+100.000 %
+0.000 %
+0.000 %
+0.000 %
+0.000 %
+---------------------------------------- Speed limit (30km/h) -------------------------------
+100.000 %
+0.000 %
+0.000 %
+0.000 %
+0.000 %
+---------------------------------------- Go straight or left -------------------------------
+100.000 %
+0.000 %
+0.000 %
+0.000 %
+0.000 %
+---------------------------------------- General caution -------------------------------
+88.069 %
+10.930 %
+0.858 %
+0.124 %
+0.008 %
 
-It is shown that models is very certain of its results. Unfortunatelly, model is certain that Pedestrians sign is General caution. 
+It is shown that models is very certain of its results in correct cases. Unfortunatelly, model is certain even with uncorrect prediction ( except speed limit 30 km/h, there is 58% reliability ). As expected, model interchanged correct in cases when picture was deformed or in not so favorable lightning conditions.  
 
 # 7. Discussion of possible improvements
 We had a problem to differentiate between Pedestrians and General caution traffic sign. One of the problems could be that the are not enough data for Pedestrians images. Possible improvement could be to use generative adversial network to generate order of magnite more images. In this case, cnn could have enough data to generalize better.
