@@ -48,7 +48,7 @@ signs data set:
 ![data-histogram][image12]
 
 
-Update: I also tried to all flip images (left <--> right) before random shuffle and add them to the original dataset, it indeed improved accuracy to 99%. But we still have 80% accuracy for real world case.
+Update: I also tried to all flip images (left <--> right) before random shuffle and add them to the original dataset, it indeed improved accuracy to 99%. But we still have 75% accuracy for real world case.
 
 
 
@@ -95,8 +95,15 @@ Graph visualisation from Tensorboard:
 
 
 
-# 4. Training phase
-I used Adam optimizer with learning rate of 1e-5 when I used my old macbook pc, but ended with default settings ( learning rate 1e-3 ). In my first training phase, I used batch size of 64. But when I received new GTX1080ti, I tried to change some parameters. So I increased batch size to 256 and let learning rate ad 1e-3. It helped me achieved needed accuracy in under 25 epochs. After those improvements, I was satisfied with the results. I also saved trained model only when validation accuracy improved. 
+# 4. Training phases and finding solution
+<p>In first iteration, I used pure LeNet architecture. I used Adam optimizer with learning rate of 1e-5. I trained it on old macbook pro. I used batch size of 64 pictures. As expected, results were not good enought. I schieved accuracy under 80%. 
+</p>
+
+<p>
+In second iteration, I tried to change some parameters. First, I let Adam Optimizer with default learning rate ( 1e-3 ). I added two dropout layers and increased batch size to 256. It helped me achieved needed accuracy in under 25 epochs. After those improvements, I was satisfied with the results. 
+
+I also saved trained model only when validation accuracy improved. If model did not improved for over 50 epochs, training automatically stops.
+</p>
 
 
 # 5. Validation Results
@@ -127,6 +134,7 @@ Here are few German traffic signs that I got:
 <img src="./new_images/g15.png" align="left" height="64" width="64" >
 <img src="./new_images/g16.png" align="left" height="64" width="64" >
 </p>
+<br/>
 
 
 <p>
@@ -231,4 +239,4 @@ The top five soft max probabilities are :
 It is shown that models is very certain of its results in correct cases. Unfortunatelly, model is certain even with uncorrect prediction ( except speed limit 30 km/h, there is 58% reliability ). As expected, model interchanged correct in cases when picture was deformed or in not so favorable lightning conditions. Uncorect predictions are somewhat similar in shape of the sign or the image in the sign. For example general caution and children crossing have very similar shapes. Same is true for speed limit 30 km/h and 120 km/h. 
 
 # 7. Discussion of possible improvements
-We had a problem to differentiate between Pedestrians and General caution traffic sign. One of the problems could be that the are not enough data for Pedestrians images. Possible improvement could be to use generative adversial network to generate order of magnite more images. In this case, cnn could have enough data to generalize better.
+We had a problem to differentiate between Pedestrians and General caution traffic sign. One of the problems could be that the are not enough data for Pedestrians images. Possible improvement could be to use generative adversial network to generate order of magnite more images. In this case, cnn could have enough data to generalize better. We could also try to use not normal grayscale conversion, but use HLS channels to get better results for different lightning settings. Final improvement will be to use VGG network or some other advanced architecture.
