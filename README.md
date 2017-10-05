@@ -112,11 +112,14 @@ Instead of just five, I downloaded twelve images from Google's Street view. Some
 All images have been captured from area around Berlin. 
 
 Here are few German traffic signs that I got:
-![Road work][image6]{:height="36px" width="36px"}
-![Pedestrians][image7]{:height="36px" width="36px"}
-![General caution][image8]{:height="36px" width="36px"}
-![Stop][image9]{:height="36px" width="36px"}
-![Speed limit (60km/h)][image10]{:height="36px" width="36px"}
+
+<img src="./new_images/g3.png" align="left" height="48" width="48" >
+<img src="./new_images/g4.png" align="left" height="48" width="48" >
+<img src="./new_images/g5.png" align="left" height="48" width="48" >
+<img src="./new_images/g7.png" align="left" height="48" width="48" >
+<img src="./new_images/g8.png" align="left" height="48" width="48" >
+
+
 
 So I preprocessed new images and run inference. I received fine results with the accuracy of 80%.
 
