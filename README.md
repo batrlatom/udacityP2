@@ -113,15 +113,22 @@ All images have been captured from area around Berlin.
 
 Here are few German traffic signs that I got:
 
-<img src="./new_images/g3.png" align="left" height="48" width="48" >
-<img src="./new_images/g4.png" align="left" height="48" width="48" >
-<img src="./new_images/g5.png" align="left" height="48" width="48" >
-<img src="./new_images/g7.png" align="left" height="48" width="48" >
-<img src="./new_images/g8.png" align="left" height="48" width="48" >
+<img src="./new_images/g3.png" align="left" height="64" width="64" >
+<img src="./new_images/g4.png" align="left" height="64" width="64" >
+<img src="./new_images/g5.png" align="left" height="64" width="64" >
+<img src="./new_images/g7.png" align="left" height="64" width="64" >
+<img src="./new_images/g8.png" align="left" height="64" width="64" >
+<img src="./new_images/g9.png" align="left" height="64" width="64" >
+<img src="./new_images/g11.png" align="left" height="64" width="64" >
+<img src="./new_images/g12.png" align="left" height="64" width="64" >
+<img src="./new_images/g13.png" align="left" height="64" width="64" >
+<img src="./new_images/g14.png" align="left" height="64" width="64" >
+<img src="./new_images/g15.png" align="left" height="64" width="64" >
+<img src="./new_images/g16.png" align="left" height="64" width="64" >
 
 
 
-So I preprocessed new images and run inference. I received fine results with the accuracy of 80%.
+So I preprocessed new images and run inference. I received fine results with the accuracy of 75%.
 
 | Image			      				|     Prediction	        		| 
 |:---------------------------------:|:---------------------------------:| 
