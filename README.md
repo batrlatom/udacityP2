@@ -112,11 +112,11 @@ Instead of just five, I downloaded twelve images from Google's Street view. Some
 All images have been captured from area around Berlin. 
 
 Here are few German traffic signs that I got:
-![Road work][image6]
-![Pedestrians][image7]
-![General caution][image8]
-![Stop][image9]
-![Speed limit (60km/h)][image10]
+![Road work][image6]{:height="36px" width="36px"}
+![Pedestrians][image7]{:height="36px" width="36px"}
+![General caution][image8]{:height="36px" width="36px"}
+![Stop][image9]{:height="36px" width="36px"}
+![Speed limit (60km/h)][image10]{:height="36px" width="36px"}
 
 So I preprocessed new images and run inference. I received fine results with the accuracy of 80%.
 
@@ -140,80 +140,80 @@ The model was able to correctly guess 9 of the 12 traffic signs, which gives an 
 
 The top five soft max probabilities are :
 
----------------------------------------- Speed limit (60km/h) -------------------------------
+------------------- Speed limit (60km/h) ------------
 100.000 %
 0.000 %
 0.000 %
 0.000 %
 0.000 %
----------------------------------------- Yield -------------------------------
+------------------- Yield ---------------------------
 100.000 %
 0.000 %
 0.000 %
 0.000 %
 0.000 %
-----------------------------------------  Keep right -------------------------------
+------------------- Keep right ----------------------
 85.343 %
 6.050 %
 5.667 %
 1.717 %
 0.996 %
----------------------------------------- Children crossing -------------------------------
+------------------- Children crossing ---------------
 99.558 %
 0.442 %
 0.000 %
 0.000 %
 0.000 %
----------------------------------------- General caution -------------------------------
+-------------------- General caution ----------------
 99.510 %
 0.193 %
 0.173 %
 0.046 %
 0.031 %
----------------------------------------- Speed limit (120km/h) -------------------------------
+-------------------- Speed limit (120km/h) ----------
 58.283 %
 20.547 %
 19.286 %
 1.469 %
 0.394 %
----------------------------------------- Stop -------------------------------
+-------------------- Stop ---------------------------
 100.000 %
 0.000 %
 0.000 %
 0.000 %
 0.000 %
----------------------------------------- Priority road -------------------------------
+-------------------- Priority road ------------------
 100.000 %
 0.000 %
 0.000 %
 0.000 %
 0.000 %
-----------------------------------------  Yield -------------------------------
+-------------------- Yield ---------------------------
 100.000 %
 0.000 %
 0.000 %
 0.000 %
 0.000 %
----------------------------------------- Speed limit (30km/h) -------------------------------
+-------------------- Speed limit (30km/h) ------------
 100.000 %
 0.000 %
 0.000 %
 0.000 %
 0.000 %
----------------------------------------- Go straight or left -------------------------------
+-------------------- Go straight or left -------------
 100.000 %
 0.000 %
 0.000 %
 0.000 %
 0.000 %
----------------------------------------- General caution -------------------------------
+-------------------- General caution -----------------
 88.069 %
 10.930 %
 0.858 %
 0.124 %
 0.008 %
 
-It is shown that models is very certain of its results in correct cases. Unfortunatelly, model is certain even with uncorrect prediction ( except speed limit 30 km/h, there is 58% reliability ). As expected, model interchanged correct in cases when picture was deformed or in not so favorable lightning conditions.  
+It is shown that models is very certain of its results in correct cases. Unfortunatelly, model is certain even with uncorrect prediction ( except speed limit 30 km/h, there is 58% reliability ). As expected, model interchanged correct in cases when picture was deformed or in not so favorable lightning conditions. Uncorect predictions are somewhat similar in shape of the sign or the image in the sign. 
 
 # 7. Discussion of possible improvements
 We had a problem to differentiate between Pedestrians and General caution traffic sign. One of the problems could be that the are not enough data for Pedestrians images. Possible improvement could be to use generative adversial network to generate order of magnite more images. In this case, cnn could have enough data to generalize better.
